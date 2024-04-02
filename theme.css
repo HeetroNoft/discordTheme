@@ -1,0 +1,120 @@
+/*------ EMOJIES ------*/
+/**
+ * @name EmojiReplace
+ * @description Replaces Discord's Emojis with Emojis of a different Provider (Apple, Facebook...)
+ * @author DevilBro
+ * @version 1.0.0
+ * @authorId 278543574059057154
+ * @invite Jx3TjNS
+ * @donate https://www.paypal.me/MircoWittrien
+ * @patreon https://www.patreon.com/MircoWittrien
+ * @website https://mwittrien.github.io/
+ * @source https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/EmojiReplace/
+ * @updateUrl https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/EmojiReplace.theme.css
+ */
+
+/*
+	!!READ THIS!!
+	
+	This theme lets you swap the default emojis of discord with the emojis of a provider of your choice.
+	To change the provider simply swap the marked word in the import url down below with a supported provider listed below.
+	The name of the provider is CASE SENSITIVE, meaning you have to write it exactly like it's written below.
+	Correct: Apple
+	False: apple, APPLE, aPpLe
+	
+	Supported Providers:
+		→ Apple
+		→ Facebook
+		→ Google
+		→ JoyPixels
+		→ Microsoft
+		→ OpenMoji
+		→ Samsung
+		→ Toss
+		→ WhatsApp
+*/
+
+/*																				                                        REPLACE THIS		*/
+/*																					                                         ↓↓↓↓↓			*/
+@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Google.css);
+/*																					                                         ↑↑↑↑↑		  	*/
+/*																				                                        REPLACE THIS		*/
+/*-----------------------------------*/
+
+/*------HORIZONTAL SERVER LIST------*/
+/**
+ * @name Horizontal Server List
+ * @author Gibbu#1211
+ * @version 2.1.0
+ * @invite ZHthyCw
+ * @description Moves the server list from the left to the top of Discord. Compatible with Server Folders and most basic transparent themes
+ * @source https://github.com/DiscordStyles/HorizontalServerList
+ * @website https://www.gibbu.me
+*/
+
+/*@import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");*/
+
+/* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
+/* @import url("https://discordstyles.github.io/Addons/bottomhsl.css"); */
+
+:root {
+  --HSL-server-icon-size: 40px;  /* Size of the server icons | DEFAULT: 40px */
+  --HSL-server-spacing: 10px;  /* Spacing between each server icon | DEFAULT: 10px */
+  --HSL-server-direction: column; /* Direct of the server list. | Options: column, column-reverse | DEFAULT: column */
+}
+/*-----------------------------------*/
+
+/*------HORIZONTAL SERVER LIST [FIX]------*/
+.scroller__3d071 div[style*="margin-bottom: 4px;"] {
+  transform: rotate(90deg) translate(22px,-16px);
+}
+.scroller__3d071 .button_afdfd9 {
+  transform: rotate(90deg) translate(-12px,14px);
+  width: auto !important;
+  height: auto !important;
+  margin-bottom: -20px;
+}
+/*-----------------------------------*/
+
+/*------PROFILE PICTURE SQUARE------*/
+.svg_a6bf1c foreignObject:not([class*="avatarHoverTarget"] foreignObject),
+[class*="messageListItem"] img {
+  mask: none !important;
+  border-radius: 6px;
+}
+/*-----------------------------------*/
+
+/*------GREYSCALE SERVEURS ICONS------*/
+[aria-label="Serveurs"] > div:not(:hover) img, 
+[aria-label="Serveurs"] > div:not(:hover) [class*="folderIconWrapper"],
+[aria-label="Serveurs"] > div:not(:hover) div[class*="icon"] {
+  filter: grayscale(100%) !important;
+  transition: filter 0.8s ease-in-out !important;
+}
+[aria-label="Serveurs"] > div:hover img,
+[aria-label="Serveurs"] > div:hover div[class*="icon"], 
+[aria-label="Serveurs"] > div:hover [class*="folderIconWrapper"],
+[aria-label="Serveurs"] div[class*="selected"] img {
+  filter: grayscale(0%) !important;
+}
+/*-----------------------------------*/
+
+/*------BOTTOM LEFT AVATAR FLIP------*/
+.avatar_f8541f:hover img {
+  animation: flip 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@keyframes flip {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*-----------------------------------*/
+
+[class*="containerDefault"] [class*="name"] {
+  text-transform: capitalize;
+}
+
+
