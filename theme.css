@@ -90,10 +90,13 @@
 /*------GREYSCALE SERVEURS ICONS------*/
 [aria-label="Serveurs"] > div:not(:hover) img,
 [aria-label="Serveurs"] > div:not(:hover) [class*="folderIconWrapper"],
-[aria-label="Serveurs"] > div:not(:hover) div[class*="icon"],
-[class*="voiceUser"] [class*="userAvatar"] {
+[aria-label="Serveurs"] > div:not(:hover) div[class*="icon"] {
   filter: grayscale(100%) !important;
   transition: filter 0.8s ease-in-out !important;
+}
+[class*="voiceUser"] [class*="userAvatar"] {
+  filter: grayscale(100%) !important;
+  transition: filter 0.3s ease-in-out !important;
 }
 [aria-label="Serveurs"] > div:hover img,
 [aria-label="Serveurs"] > div:hover div[class*="icon"],
