@@ -61,6 +61,9 @@
   --HSL-server-icon-size: 40px; /* Size of the server icons | DEFAULT: 40px */
   --HSL-server-spacing: 10px; /* Spacing between each server icon | DEFAULT: 10px */
   --HSL-server-direction: column; /* Direct of the server list. | Options: column, column-reverse | DEFAULT: column */
+  --myColor: #9147ff;
+  --myColor-10: #9147ff1a;
+  --myColor-15: #9147ff26;
 }
 /*-----------------------------------*/
 
@@ -124,3 +127,26 @@
 [class*="containerDefault"] [class*="name"] {
   text-transform: capitalize;
 }
+
+/*------MESSAGES LIST ITEMS------*/
+[class*="messageListItem"] {
+  margin: 4px 0 4px 16px;
+  border-radius: var(--radius-sm);
+}
+[class*="messageListItem"] [class*="cozyMessage"] {
+  margin-top: 8px;
+  border-radius: var(--radius-sm);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: var(--custom-message-margin-left-content-cozy);
+}
+[class*="mentioned"] {
+  background-color: var(--myColor-15);
+}
+[class*="mentioned"]:hover {
+  background-color: var(--myColor-10);
+}
+[class*="mentioned"]:before {
+  background-color: var(--myColor);
+}
+/*-----------------------------------*/
