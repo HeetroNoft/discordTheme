@@ -144,7 +144,7 @@
   background-color: var(--myColor-15);
 }
 [class*="mentioned"]:hover {
-  background-color: var(--myColor-10);
+  background-color: var(--myColor-10) !important;
 }
 [class*="mentioned"]:before {
   background-color: var(--myColor);
