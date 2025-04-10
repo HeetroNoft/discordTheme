@@ -134,10 +134,10 @@
   border-radius: var(--radius-sm);
 }
 [class*="messageListItem"] [class*="cozyMessage"] {
-  margin-top: 8px;
+  margin-top: 4px;
   border-radius: var(--radius-sm);
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: var(--custom-message-margin-left-content-cozy);
 }
 [class*="mentioned"] {
