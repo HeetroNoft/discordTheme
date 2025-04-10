@@ -136,8 +136,8 @@
 [class*="messageListItem"] [class*="cozyMessage"] {
   margin-top: 8px;
   border-radius: var(--radius-sm);
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: var(--custom-message-margin-left-content-cozy);
 }
 [class*="mentioned"] {
