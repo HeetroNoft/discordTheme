@@ -1,73 +1,91 @@
-/*------ EMOJIES ------*/
-/**
- * @name EmojiReplace
- * @description Replaces Discord's Emojis with Emojis of a different Provider (Apple, Facebook...)
- * @author DevilBro
- * @version 1.0.0
- * @authorId 278543574059057154
- * @invite Jx3TjNS
- * @donate https://www.paypal.me/MircoWittrien
- * @patreon https://www.patreon.com/MircoWittrien
- * @website https://mwittrien.github.io/
- * @source https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/EmojiReplace/
- * @updateUrl https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/EmojiReplace.theme.css
- */
+/* ==========================================================================
+   DISCORD THEME
+   ==========================================================================
 
-/*
-	!!READ THIS!!
-	
-	This theme lets you swap the default emojis of discord with the emojis of a provider of your choice.
-	To change the provider simply swap the marked word in the import url down below with a supported provider listed below.
-	The name of the provider is CASE SENSITIVE, meaning you have to write it exactly like it's written below.
-	Correct: Apple
-	False: apple, APPLE, aPpLe
-	
-	Supported Providers:
-		→ Apple
-		→ Facebook
-		→ Google
-		→ JoyPixels
-		→ Microsoft
-		→ OpenMoji
-		→ Samsung
-		→ Toss
-		→ WhatsApp
-*/
+   SOMMAIRE
+   --------------------------------------------------------------------------
+   1. Imports externes
+      1.1 Emoji Replace
+      1.2 Horizontal Server List
+   2. Variables
+   3. Liste des serveurs
+      3.1 Horizontal Server List (correctifs)
+      3.2 Icônes en niveaux de gris
+   4. Avatars
+      4.1 Avatars carrés
+      4.2 Animation de l'avatar (bas gauche)
+   5. Salons
+   6. Messages
+   7. Zone de saisie (responsive)
 
-/*																				                                        REPLACE THIS		*/
-/*																					                                         ↓↓↓↓↓			*/
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. IMPORTS EXTERNES
+   Les @import doivent rester en tête de fichier.
+   ========================================================================== */
+
+/* 1.1 Emoji Replace
+   --------------------------------------------------------------------------
+   Remplace les emojis de Discord par ceux d'un autre fournisseur.
+
+   @author  DevilBro
+   @version 1.0.0
+   @source  https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/EmojiReplace/
+   @website https://mwittrien.github.io/
+
+   Pour changer de fournisseur, remplacer le nom du fichier dans l'URL
+   (ex. "Google.css" -> "Apple.css"). Le nom est SENSIBLE À LA CASSE.
+
+   Fournisseurs disponibles :
+   Apple, Facebook, Google, JoyPixels, Microsoft, OpenMoji, Samsung, Toss, WhatsApp
+   -------------------------------------------------------------------------- */
 @import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Google.css);
-/*																					                                         ↑↑↑↑↑		  	*/
-/*																				                                        REPLACE THIS		*/
-/*-----------------------------------*/
 
-/*------HORIZONTAL SERVER LIST------*/
-/**
- * @name Horizontal Server List
- * @author Gibbu#1211
- * @version 2.1.0
- * @invite ZHthyCw
- * @description Moves the server list from the left to the top of Discord. Compatible with Server Folders and most basic transparent themes
- * @source https://github.com/DiscordStyles/HorizontalServerList
- * @website https://www.gibbu.me
-*/
+/* 1.2 Horizontal Server List
+   --------------------------------------------------------------------------
+   Déplace la liste des serveurs de la gauche vers le haut de Discord.
 
-/*@import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");*/
+   @author  Gibbu#1211
+   @version 2.1.0
+   @source  https://github.com/DiscordStyles/HorizontalServerList
+   @website https://www.gibbu.me
 
-/* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
+   Désactivé : retirer les commentaires autour d'un @import pour l'activer.
+   -------------------------------------------------------------------------- */
+
+/* Liste en haut */
+/* @import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css"); */
+
+/* Liste en bas */
 /* @import url("https://discordstyles.github.io/Addons/bottomhsl.css"); */
 
-:root {
-  --HSL-server-icon-size: 40px; /* Size of the server icons | DEFAULT: 40px */
-  --HSL-server-spacing: 10px; /* Spacing between each server icon | DEFAULT: 10px */
-  --HSL-server-direction: column; /* Direct of the server list. | Options: column, column-reverse | DEFAULT: column */
-  --myColor: #9147ff;
-  --myColor-10: #9147ff1a;
-  --myColor-15: #9147ff26;
-}
-/*-----------------------------------*/
 
-/*------HORIZONTAL SERVER LIST [FIX]------*/
+/* ==========================================================================
+   2. VARIABLES
+   ========================================================================== */
+
+:root {
+  /* Horizontal Server List */
+  --HSL-server-icon-size: 40px; /* Taille des icônes de serveur | DÉFAUT : 40px */
+  --HSL-server-spacing: 10px; /* Espacement entre les icônes | DÉFAUT : 10px */
+  --HSL-server-direction: column; /* Sens de la liste | Options : column, column-reverse | DÉFAUT : column */
+
+  /* Couleur d'accent */
+  --myColor: #9147ff;
+  --myColor-10: #9147ff1a; /* 10 % d'opacité */
+  --myColor-15: #9147ff26; /* 15 % d'opacité */
+}
+
+
+/* ==========================================================================
+   3. LISTE DES SERVEURS
+   ========================================================================== */
+
+/* 3.1 Horizontal Server List (correctifs)
+   Réoriente les séparateurs et boutons de la liste horizontale.
+   -------------------------------------------------------------------------- */
 .scroller__3d071 div[style*="margin-bottom: 4px;"] {
   transform: rotate(90deg) translate(22px, -16px);
 }
@@ -77,20 +95,13 @@
   height: auto !important;
   margin-bottom: -20px;
 }
-/*-----------------------------------*/
 
-/*------PROFILE PICTURE SQUARE------*/
-.svg_a6bf1c foreignObject:not([class*="avatarHoverTarget"] foreignObject),
-[class*="messageListItem"] img {
-  mask: none !important;
-  border-radius: 6px;
-}
-[class*="voiceUser"] [class*="userAvatar"] {
-  border-radius: 6px;
-}
-/*-----------------------------------*/
+/* 3.2 Icônes en niveaux de gris
+   Icônes de serveurs et avatars vocaux en gris, colorés au survol,
+   sur le serveur sélectionné ou quand l'utilisateur parle.
+   -------------------------------------------------------------------------- */
 
-/*------GREYSCALE SERVEURS ICONS------*/
+/* État par défaut : gris */
 [aria-label="Serveurs"] > div:not(:hover) img,
 [aria-label="Serveurs"] > div:not(:hover) [class*="folderIconWrapper"],
 [aria-label="Serveurs"] > div:not(:hover) div[class*="icon"] {
@@ -101,6 +112,8 @@
   filter: grayscale(100%) !important;
   transition: filter 0.3s ease-in-out !important;
 }
+
+/* Survol, sélection, prise de parole : couleur */
 [aria-label="Serveurs"] > div:hover img,
 [aria-label="Serveurs"] > div:hover div[class*="icon"],
 [aria-label="Serveurs"] > div:hover [class*="folderIconWrapper"],
@@ -108,9 +121,27 @@
 [class*="voiceUser"] [class*="avatarSpeaking"] {
   filter: grayscale(0%) !important;
 }
-/*-----------------------------------*/
 
-/*------BOTTOM LEFT AVATAR FLIP------*/
+
+/* ==========================================================================
+   4. AVATARS
+   ========================================================================== */
+
+/* 4.1 Avatars carrés
+   Supprime le masque rond des avatars (messages, profil, vocal).
+   -------------------------------------------------------------------------- */
+.svg_a6bf1c foreignObject:not([class*="avatarHoverTarget"] foreignObject),
+[class*="messageListItem"] img {
+  mask: none !important;
+  border-radius: 6px;
+}
+[class*="voiceUser"] [class*="userAvatar"] {
+  border-radius: 6px;
+}
+
+/* 4.2 Animation de l'avatar (bas gauche)
+   Rotation complète de l'avatar utilisateur au survol.
+   -------------------------------------------------------------------------- */
 .avatar_f8541f:hover img {
   animation: flip 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -122,13 +153,23 @@
     transform: rotate(360deg);
   }
 }
-/*-----------------------------------*/
 
+
+/* ==========================================================================
+   5. SALONS
+   ========================================================================== */
+
+/* Majuscule en début de nom de salon */
 [class*="containerDefault"] [class*="name"] {
   text-transform: capitalize;
 }
 
-/*------MESSAGES LIST ITEMS------*/
+
+/* ==========================================================================
+   6. MESSAGES
+   ========================================================================== */
+
+/* Messages arrondis et décalés */
 [class*="messageListItem"] {
   margin: 4px 0 4px 16px;
   border-radius: var(--radius-sm);
@@ -140,6 +181,8 @@
   padding-bottom: 4px;
   padding-left: var(--custom-message-margin-left-content-cozy);
 }
+
+/* Messages qui vous mentionnent */
 [class*="mentioned"] {
   background-color: var(--myColor-15);
 }
@@ -149,4 +192,32 @@
 [class*="mentioned"]:before {
   background-color: var(--myColor);
 }
-/*-----------------------------------*/
+
+
+/* ==========================================================================
+   7. ZONE DE SAISIE (RESPONSIVE)
+   Sous 450px de large, les boutons passent sous le champ de texte
+   et le bouton "+" (pièces jointes) reste en haut à gauche.
+   ========================================================================== */
+
+[class*="channelTextArea_"] {
+  container: chatbox / inline-size;
+}
+@container chatbox (width <= 450px) {
+  [class*="inner_"] {
+    flex-wrap: wrap;
+  }
+  [class*="attachWrapper_"] {
+    position: absolute;
+    top: 8px;
+    left: 18px;
+  }
+  [class*="textAreaSlate_"] {
+    min-width: 300px;
+    margin-left: 40px !important;
+  }
+  [class*="buttons_"] {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
