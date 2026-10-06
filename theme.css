@@ -243,14 +243,12 @@
 
 /* ==========================================================================
    9. BARRE DE TITRE
-   Masque les éléments de la barre de titre, sauf les boutons de fenêtre
-   (réduire, agrandir, fermer).
+   Quand la fenêtre fait 800px de large ou moins (ce qui correspond à peu
+   près à une zone de saisie de 450px), masque les éléments de la barre de
+   titre, sauf les boutons de fenêtre (réduire, agrandir, fermer).
    ========================================================================== */
 
-[class*="subtitleContainer_"] {
-  container: subtitlecontainer / inline-size;
-}
-@container subtitlecontainer (width <= 450px) {
+@media (max-width: 800px) {
   [class*="trailing_"] > :not([class*="winButtons_"]) {
     display: none !important;
   }
