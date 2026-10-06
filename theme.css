@@ -17,6 +17,8 @@
    5. Salons
    6. Messages
    7. Zone de saisie (responsive)
+   8. Panneau utilisateur (responsive)
+   9. Barre de titre
 
    ========================================================================== */
 
@@ -220,4 +222,40 @@
     width: 100%;
     justify-content: space-between;
   }
+}
+
+
+/* ==========================================================================
+   8. PANNEAU UTILISATEUR (RESPONSIVE)
+   Sous 300px de large, le panneau passe en colonne : les boutons
+   (micro, casque, paramètres) se placent au-dessus du profil.
+   ========================================================================== */
+
+[class*="panels_"] {
+  container: userpanel / inline-size;
+}
+@container userpanel (width <= 300px) {
+  [class*="container_"] {
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
+  [class*="accountPopoutButtonWrapper_"],
+  [class*="activityStatusText_"] {
+    width: 100%;
+  }
+  [class*="buttons_"] {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+
+/* ==========================================================================
+   9. BARRE DE TITRE
+   Masque les éléments de la barre de titre, sauf les boutons de fenêtre
+   (réduire, agrandir, fermer).
+   ========================================================================== */
+
+[class*="trailing_"] > :not([class*="winButtons_"]) {
+  display: none !important;
 }
