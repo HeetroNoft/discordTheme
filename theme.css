@@ -22,7 +22,6 @@
 
    ========================================================================== */
 
-
 /* ==========================================================================
    1. IMPORTS EXTERNES
    Les @import doivent rester en tête de fichier.
@@ -63,7 +62,6 @@
 /* Liste en bas */
 /* @import url("https://discordstyles.github.io/Addons/bottomhsl.css"); */
 
-
 /* ==========================================================================
    2. VARIABLES
    ========================================================================== */
@@ -79,7 +77,6 @@
   --myColor-10: #9147ff1a; /* 10 % d'opacité */
   --myColor-15: #9147ff26; /* 15 % d'opacité */
 }
-
 
 /* ==========================================================================
    3. LISTE DES SERVEURS
@@ -124,7 +121,6 @@
   filter: grayscale(0%) !important;
 }
 
-
 /* ==========================================================================
    4. AVATARS
    ========================================================================== */
@@ -156,7 +152,6 @@
   }
 }
 
-
 /* ==========================================================================
    5. SALONS
    ========================================================================== */
@@ -165,7 +160,6 @@
 [class*="containerDefault"] [class*="name"] {
   text-transform: capitalize;
 }
-
 
 /* ==========================================================================
    6. MESSAGES
@@ -195,7 +189,6 @@
   background-color: var(--myColor);
 }
 
-
 /* ==========================================================================
    7. ZONE DE SAISIE (RESPONSIVE)
    Sous 450px de large, les boutons passent sous le champ de texte
@@ -224,7 +217,6 @@
   }
 }
 
-
 /* ==========================================================================
    8. PANNEAU UTILISATEUR (RESPONSIVE)
    Sous 300px de large, le panneau passe en colonne : les boutons
@@ -249,13 +241,17 @@
   }
 }
 
-
 /* ==========================================================================
    9. BARRE DE TITRE
    Masque les éléments de la barre de titre, sauf les boutons de fenêtre
    (réduire, agrandir, fermer).
    ========================================================================== */
 
-[class*="trailing_"] > :not([class*="winButtons_"]) {
-  display: none !important;
+[class*="subtitleContainer_"] {
+  container: subtitlecontainer / inline-size;
+}
+@container subtitlecontainer (width <= 450px) {
+  [class*="trailing_"] > :not([class*="winButtons_"]) {
+    display: none !important;
+  }
 }
