@@ -232,8 +232,11 @@
     height: fit-content;
   }
   [class*="accountPopoutButtonWrapper_"],
-  [class*="activityStatusText_"] {
+  [class*="activityStatusText_"][class*="truncated_"] {
     width: 100%;
+  }
+  [class*="activityStatusText_"]:not([class*="truncated_"]) {
+    width: auto;
   }
   [class*="buttons_"] {
     width: 100%;
