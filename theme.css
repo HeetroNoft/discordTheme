@@ -227,7 +227,7 @@
   container: userpanel / inline-size;
 }
 @container userpanel (width <= 300px) {
-  [class*="container_"] {
+  [class*="panels_"] > [class*="container_"] {
     flex-direction: column-reverse;
     height: fit-content;
   }
